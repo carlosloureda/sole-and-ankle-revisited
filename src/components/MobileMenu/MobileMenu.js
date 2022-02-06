@@ -19,7 +19,9 @@ const MobileMenu = ({ isOpen, onDismiss }) => {
       <Content aria-label="menu-content">
         <CloseButton onClick={onDismiss}>
           <Icon id="close" strokeWidth={2} />
+          <VisuallyHidden>Close</VisuallyHidden>
         </CloseButton>
+        <Filler />
         <Nav>
           <NavLink href="/sale">Sale</NavLink>
           <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -58,28 +60,34 @@ const Content = styled(DialogContent)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 32px;
-  /* padding-top: 288px; */
+  padding: 32px;
 `;
 
 const CloseButton = styled(UnstyledButton)`
   position: absolute;
-  top: 32px;
-  right: 22px;
+  top: 10px;
+  right: 14px;
+  padding: 16px;
 `;
 
 const Nav = styled.nav`
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 16px;
 `;
 
 const Footer = styled.footer`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  justify-content: flex-end;
+  /* gap: 14px;
   position: absolute;
-  bottom: 48px;
+  bottom: 48px;  */
+`;
+
+const Filler = styled.div`
+  flex: 1;
 `;
 
 const NavLink = styled.a`
